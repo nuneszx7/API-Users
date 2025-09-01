@@ -26,6 +26,28 @@ const getUserById = (req, res) => {
 
 }
 
+//Método do controlador para criar um novo usuário
+const createUser = (req, res) => {
+
+    //Pegando os dados que foram enviados pelo Body (corpo) da requisição
+    const {name, email} = req.body
+
+    //Validar se foram enviados
+    if(!name || !email){
+
+        return res.status(400).json({mensagem: 'Nome e email são obrigatórios'})
+
+    }
+    else {
+
+        const newUser = userModel.create({name,email})
+        res.status(201).json(newUser)
+
+    }
+
+}
+
+
 module.exports = {
     getAllUsers,
     getUserById

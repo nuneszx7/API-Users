@@ -7,6 +7,9 @@ const userRoutes = require('./src/routes/userRoutes')
 //Criar uma aplicação express
 const app = express();
 
+//Definir um midleware para analisar json no corpo das requisições
+app.use(express.json())
+
 //Definir a porta do servidor que irá escutar
 const porta = 8000;
 
