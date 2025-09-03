@@ -15,6 +15,6 @@ router.get('/', userController.getAllUsers)
 router.get('/:id', userController.getUserById)
 
 //3° Rota para criar um novo usuário
-//router.post('/', userController.createUser)
+router.post('/', userController.createUser)
 
 module.exports = router

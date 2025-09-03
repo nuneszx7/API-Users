@@ -37,8 +37,7 @@ const createUser = (req, res) => {
 
         return res.status(400).json({mensagem: 'Nome e email são obrigatórios'})
 
-    }
-    else {
+    }else {
 
         const newUser = userModel.create({name,email})
         res.status(201).json(newUser)
@@ -50,5 +49,6 @@ const createUser = (req, res) => {
 
 module.exports = {
     getAllUsers,
-    getUserById
+    getUserById,
+    createUser
 }
